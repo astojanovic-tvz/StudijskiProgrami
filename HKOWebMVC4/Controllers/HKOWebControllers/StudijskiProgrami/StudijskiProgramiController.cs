@@ -63,17 +63,21 @@ namespace HKOWebMVC4.Controllers.HKOWebControllers.StudijskiProgrami {
         //[MvcSiteMapNodeAttribute(Title = "Ključni Poslovi", ParentKey = "StudijskiProgrami", Key = "SPKljucniPoslovi",
         //    DynamicNodeProvider = "HKOWebMVC4.SiteMapNodeProviders.BuduciStudentProviders.ZanimanjeIDDeterminedDynamicNodeProvider, HKOWebMVC4")]
         public ActionResult Silabus(int kolegijId) {
-            DataSet ds = Util.DB.PozoviSP("web.KolegijSilabus", new List<SqlParameter> { new SqlParameter("KolegijID", kolegijId) });
+            try {
+                DataSet ds = Util.DB.PozoviSP("web.KolegijSilabus", new List<SqlParameter> { new SqlParameter("KolegijID", kolegijId) });
 
-            string ime = (string)ds.Tables[0].Rows[0]["DokumentNaziv"];
-            byte[] sadrzaj = (byte[])ds.Tables[0].Rows[0]["DokumentBlob"];
+                string ime = (string)ds.Tables[0].Rows[0]["DokumentNaziv"];
+                byte[] sadrzaj = (byte[])ds.Tables[0].Rows[0]["DokumentBlob"];
 
-            FileStream fs = new FileStream("C:\\Users\\astojanovic\\Documents\\" + ime, FileMode.OpenOrCreate, FileAccess.Write);
-            BinaryWriter bw = new BinaryWriter(fs);
-            bw.Write(sadrzaj);
-            bw.Close();
+                FileStream fs = new FileStream("C:\\Users\\Public\\" + ime, FileMode.OpenOrCreate, FileAccess.Write);
+                BinaryWriter bw = new BinaryWriter(fs);
+                bw.Write(sadrzaj);
+                bw.Close();
 
-            return File("C:\\Users\\astojanovic\\Documents\\" + ime, "application/rtf");
+                return File("C:\\Users\\Public\\" + ime, "application/rtf");
+            } catch (Exception) {
+                return null;
+            }
         }
 /*
         // GET: BuduciStudent/Edit/5

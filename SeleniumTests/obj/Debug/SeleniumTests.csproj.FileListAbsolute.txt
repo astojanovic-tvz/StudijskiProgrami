@@ -7,3 +7,13 @@ C:\Users\astojanovic\Source\Repos\HKOWebMVC4\SeleniumTests\bin\Debug\WebDriver.x
 C:\Users\astojanovic\Source\Repos\HKOWebMVC4\SeleniumTests\bin\Debug\WebDriver.Support.xml
 C:\Users\astojanovic\Source\Repos\HKOWebMVC4\SeleniumTests\obj\Debug\SeleniumTests.exe
 C:\Users\astojanovic\Source\Repos\HKOWebMVC4\SeleniumTests\obj\Debug\SeleniumTests.pdb
+C:\Users\astojanovic\Documents\GitHub\HKOWebMVC4\SeleniumTests\bin\Debug\SeleniumTests.exe.config
+C:\Users\astojanovic\Documents\GitHub\HKOWebMVC4\SeleniumTests\bin\Debug\SeleniumTests.exe
+C:\Users\astojanovic\Documents\GitHub\HKOWebMVC4\SeleniumTests\bin\Debug\SeleniumTests.pdb
+C:\Users\astojanovic\Documents\GitHub\HKOWebMVC4\SeleniumTests\bin\Debug\WebDriver.dll
+C:\Users\astojanovic\Documents\GitHub\HKOWebMVC4\SeleniumTests\bin\Debug\WebDriver.Support.dll
+C:\Users\astojanovic\Documents\GitHub\HKOWebMVC4\SeleniumTests\bin\Debug\WebDriver.xml
+C:\Users\astojanovic\Documents\GitHub\HKOWebMVC4\SeleniumTests\bin\Debug\WebDriver.Support.xml
+C:\Users\astojanovic\Documents\GitHub\HKOWebMVC4\SeleniumTests\obj\Debug\SeleniumTests.csprojResolveAssemblyReference.cache
+C:\Users\astojanovic\Documents\GitHub\HKOWebMVC4\SeleniumTests\obj\Debug\SeleniumTests.exe
+C:\Users\astojanovic\Documents\GitHub\HKOWebMVC4\SeleniumTests\obj\Debug\SeleniumTests.pdb

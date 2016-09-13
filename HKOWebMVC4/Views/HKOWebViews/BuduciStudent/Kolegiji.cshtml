@@ -12,7 +12,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" style="color: black">Kolegiji</a>
+            <a class="navbar-brand" style="color: beige; font-size:large">Kolegiji</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -27,9 +27,7 @@
 </nav>
 
 <div class="tab-content">
-    <h3>Obavezni Kolegiji</h3>
     <div id="obavezni" class="tab-pane fade in active">
-
         <table id="obavezniTable">
             <thead>
                 <tr>
@@ -38,8 +36,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Model.obavezniKolegijiResult.ToList())
-                {
+                @foreach (var item in Model.obavezniKolegijiResult.ToList()) {
                     <tr>
                         <td>@Html.DisplayFor(modelItem => item.Kolegij)</td>
                         <td class="text-center">@Html.ActionLink("Ishodi učenja", "IshodiUcenja", new { controller = "BuduciStudent", kolegijId = item.KolegijID }, new { @class = "btn btn-success" })</td>
@@ -58,8 +55,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Model.izborniKolegijiResult.ToList())
-                {
+                @foreach (var item in Model.izborniKolegijiResult.ToList()) {
                     <tr>
                         <td>@Html.DisplayFor(modelItem => item.Kolegij)</td>
                         <td class="text-center">@Html.ActionLink("Ishodi učenja", "IshodiUcenja", new { controller = "BuduciStudent", kolegijId = item.KolegijID }, new { @class = "btn btn-success" })</td>
@@ -78,8 +74,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Model.preporuceniKolegijiResult.ToList())
-                {
+                @foreach (var item in Model.preporuceniKolegijiResult.ToList()) {
                     <tr>
                         <td>@Html.DisplayFor(modelItem => item.Kolegij)</td>
                         <td class="text-center">@Html.ActionLink("Ishodi učenja", "IshodiUcenja", new { controller = "BuduciStudent", kolegijId = item.KolegijID }, new { @class = "btn btn-success" })</td>
