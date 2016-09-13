@@ -1,0 +1,51 @@
+﻿@model IEnumerable<HKOWebMVC4.ZanimanjeStudiji_Result>
+<h5>@Html.MvcSiteMap().SiteMapPath()</h5>
+
+<table id="zanimanjaStudijiTable">
+    <thead>
+        <tr>
+            <th>
+                Zanimanje
+            </th>
+            <th>
+                Studij
+            </th>
+            <th>
+                Studijski program
+            </th>
+            <th>Pregled:</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Zanimanje)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Studij)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Studijski_program)                    
+                </td>
+                <td style="width:100px">
+                    <div class="dropdown btn-group btn-group-sm">
+                        <button type="button" class="btn btn-disabled">Opcije:</button>
+                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Radna Mjesta", "RadnaMjesta", new { controller = "BuduciStudent", zanimanjeId = item.ZanimanjeID })
+                            <li>@Html.ActionLink("Ključni poslovi", "KljucniPoslovi", new { controller = "BuduciStudent", zanimanjeId = item.ZanimanjeID })
+                            <li>@Html.ActionLink("Kompetencije", "Kompetencije", new { controller = "BuduciStudent", zanimanjeId = item.ZanimanjeID })
+                            <li>@Html.ActionLink("Kolegiji", "Kolegiji", new { controller = "BuduciStudent", studijskiProgramId = item.StudijskiProgramID, zanimanjeId = item.ZanimanjeID })
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>

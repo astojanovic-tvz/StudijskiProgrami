@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head style="background-color:yellow">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - studijskiprogrami.tvz.hr</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body style="background-color:beige">
+    <style>
+        .nav.navbar-nav li a { color: lightyellow; }
+    </style>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:cornflowerblue; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif font-size:13px; font-weight:100">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Studijski programi", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "color:black;" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Budući student", "Index", "BuduciStudent")</li>
+                    <li>@Html.ActionLink("Završeni student", "Index", "ZavrseniStudent")</li>
+                    <li>@Html.ActionLink("Poslodavac", "Index", "Poslodavac")</li>
+                    <li>@Html.ActionLink("Studijski programi", "Index", "StudijskiProgrami")</li>
+                    <li>@Html.ActionLink("Administracija", "Index", "Administracija")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - TVZ</p>
+        </footer>
+    </div>
+
+    @*The JQuery source script has to be loaded first!!  *@
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jqueryval")
+    @*Ako se u BundleConfigu isključi HKOWebJS onda se može ovdje ručno uključit. Također, u Bundlu postoji Optimize opcija - minimize*@
+    @*@Scripts.Render("~/Scripts/HKOWebJS.js")*@
+    @RenderSection("scripts", required: false)
+
+    @* Datatables *@
+    <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+    <link href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css" rel="stylesheet" />
+</body>
+</html>

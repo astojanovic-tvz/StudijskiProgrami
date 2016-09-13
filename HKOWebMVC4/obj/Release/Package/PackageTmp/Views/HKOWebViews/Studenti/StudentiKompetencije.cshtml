@@ -1,0 +1,25 @@
+﻿@model IEnumerable<HKOWebMVC4.KolegijKompetencije_Result>
+
+<h5>@Html.MvcSiteMap().SiteMapPath() > Kompetencije</h5>
+
+<table class="table" id="studentKompetencije">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Kompetencija)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Kompetencija)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href=@ViewBag.back class="btn btn-primary">Povratak</a>

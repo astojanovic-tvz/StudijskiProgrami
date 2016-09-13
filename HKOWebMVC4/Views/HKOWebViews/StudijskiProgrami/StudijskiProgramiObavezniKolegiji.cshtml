@@ -1,0 +1,74 @@
+﻿@model  HKOWebMVC4.Models.HKOWebModels.PopisKolegija
+
+@*<h5>@Html.MvcSiteMap().SiteMapPath() > Pregled kolegija</h5>*@
+
+<nav class="navbar navbar-default navbar-inverse">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand">Kolegiji</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li role="presentation" class="active"><a data-toggle="pill" href="#obavezni">Obavezni kolegiji</a></li>
+                <li role="presentation"><a data-toggle="pill" href="#izborni">Izborni kolegiji</a></li>
+@*                <li role="presentation"><a data-toggle="pill" href="#preporuceni">Preporučeni izborni kolegiji</a></li>*@
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="tab-content">
+    <div id="obavezni" class="tab-pane fade in active">
+        <table id="obavezniTable" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Kolegij</th>
+                    <th>Semestar</th>
+                    <th>Opcija</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.ObavezniKolegiji) {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Naziv)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Semestar)</td>
+                        <td class="text-center">@Html.ActionLink("Silabus", "Silabus", new { controller = "StudijskiProgrami", kolegijId = item.KolegijID }, new { @class = "btn btn-success" })</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div id="izborni" class="tab-pane">
+        <table id="izborniTable" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Kolegij</th>
+                    <th>Semestar</th>
+                    <th>Opcija</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.IzborniKolegiji) {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Naziv)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Semestar)</td>
+                        <td class="text-center">@Html.ActionLink("Silabus", "Silabus", new { controller = "StudijskiProgrami", kolegijId = item.KolegijID }, new { @class = "btn btn-success" })</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+@Html.ActionLink("Povratak", "Index", new { controller = "StudijskiProgrami" }, new { @class = "btn btn-primary" })

@@ -1,0 +1,25 @@
+﻿@model IEnumerable<HKOWebMVC4.KolegijSkupIshodaUcenja_Result>
+
+<h5>@Html.MvcSiteMap().SiteMapPath() > Ishodi učenja</h5>
+
+<table id ="ishodiUcenjaTable">
+    <thead>
+        <tr>
+            <th>Ishod učenja</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SkupIshodaUcenja)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href=@ViewBag.back class = "btn btn-primary">Povratak</a>
+
+

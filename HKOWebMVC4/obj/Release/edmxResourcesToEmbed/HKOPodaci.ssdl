@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HKOModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <Function Name="KolegijKompetencije" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="web">
+    <Parameter Name="KolegijISVUSifra" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="KolegijSkupIshodaUcenja" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="web">
+    <Parameter Name="KolegijID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="StudijskiProgrami" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="web" />
+  <Function Name="StudijskiProgramIzborniKolegiji" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="web">
+    <Parameter Name="StudijskiProgramID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="StudijskiProgramKljucniPoslovi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="web">
+    <Parameter Name="StudijskiProgramID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="StudijskiProgramKompetencije" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="web">
+    <Parameter Name="StudijskiProgramID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="StudijskiProgramObavezniKolegiji" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="web">
+    <Parameter Name="StudijskiProgramID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="StudijskiProgramRadnaMjesta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="web">
+    <Parameter Name="StudijskiProgramID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ZanimanjeKljucniPoslovi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="web">
+    <Parameter Name="ZanimanjeID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ZanimanjeKompetencije" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="web">
+    <Parameter Name="ZanimanjeID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ZanimanjeNaziv" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="web">
+    <Parameter Name="ZanimanjeID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ZanimanjePreporuceniIzborniKolegiji" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="web">
+    <Parameter Name="ZanimanjeID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ZanimanjeRadnaMjesta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="web">
+    <Parameter Name="ZanimanjeID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ZanimanjeStudiji" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="web" />
+  <EntityContainer Name="HKOModelStoreContainer" />
+</Schema>

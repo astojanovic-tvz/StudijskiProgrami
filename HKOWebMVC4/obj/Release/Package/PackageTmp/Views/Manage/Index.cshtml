@@ -1,0 +1,168 @@
+﻿@model HKOWebMVC4.Models.IndexViewModel
+
+<h4>@Html.MvcSiteMap().SiteMapPath()</h4>
+
+<p class="text-success">@TempData["update"]</p>
+
+<hr />
+<div class="container">
+
+
+
+    @using (Html.BeginForm("Edit", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+        @Html.AntiForgeryToken()
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.user.Email, new { @class = "col-md-3 control-label" })
+            <div class="col-md-9">
+                @Html.TextBoxFor(m => m.user.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.user.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+            <div class="form-group">
+                <label class = "col-md-3 control-label">Korisničko ime</label>
+                <div class="col-md-9">
+                    @Html.TextBoxFor(m => m.user.UserName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.user.UserName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.user.UserProfileInfo.Ime, new { @class = "col-md-3 control-label" })
+                <div class="col-md-9">
+                    @Html.TextBoxFor(m => m.user.UserProfileInfo.Ime, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.user.UserProfileInfo.Ime, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.user.UserProfileInfo.Prezime, new { @class = "col-md-3 control-label" })
+                <div class="col-md-9">
+                    @Html.TextBoxFor(m => m.user.UserProfileInfo.Prezime, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.user.UserProfileInfo.Prezime, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.user.UserProfileInfo.JMBAG, new { @class = "col-md-3 control-label" })
+                        <div class="col-md-9">
+                            @Html.TextBoxFor(m => m.user.UserProfileInfo.JMBAG, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.user.UserProfileInfo.JMBAG, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.user.UserProfileInfo.Država, new { @class = "col-md-3 control-label" })
+                        <div class="col-md-9">
+                            @Html.TextBoxFor(m => m.user.UserProfileInfo.Država, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.user.UserProfileInfo.Država, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.user.UserProfileInfo.Grad, new { @class = "col-md-3 control-label" })
+                        <div class="col-md-9">
+                            @Html.TextBoxFor(m => m.user.UserProfileInfo.Grad, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.user.UserProfileInfo.Grad, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.user.UserProfileInfo.Adresa, new { @class = "col-md-3 control-label" })
+                        <div class="col-md-9">
+                            @Html.TextBoxFor(m => m.user.UserProfileInfo.Adresa, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.user.UserProfileInfo.Adresa, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-9">
+                            <button type="submit" class="btn btn-warning">Izmijeni podatke</button>
+                        </div>
+                    </div>
+    }
+
+    @Html.Partial("~/Views/HkoWebViews/Korisnik/_KorisnikOdabirOdabranaZanimanja.cshtml", Model.odabirZanimanja)
+</div>
+
+
+
+<hr />
+<dl class="dl-horizontal">
+    <dt>Password:</dt>
+    <dd>
+        [
+        @if (Model.HasPassword)
+        {
+            @Html.ActionLink("Change your password", "ChangePassword")
+        }
+        else
+        {
+            @Html.ActionLink("Create", "SetPassword")
+        }
+        ]
+    </dd>
+    <dt>External Logins:</dt>
+    <dd>
+        @Model.Logins.Count [
+        @Html.ActionLink("Manage", "ManageLogins") ]
+    </dd>
+    @*
+        Phone Numbers can used as a second factor of verification in a two-factor authentication system.
+
+         See <a href="http://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
+            for details on setting up this ASP.NET application to support two-factor authentication using SMS.
+
+         Uncomment the following block after you have set up two-factor authentication
+    *@
+    @*
+        <dt>Phone Number:</dt>
+        <dd>
+            @(Model.PhoneNumber ?? "None")
+            @if (Model.PhoneNumber != null)
+            {
+                <br />
+                <text>[&nbsp;&nbsp;@Html.ActionLink("Change", "AddPhoneNumber")&nbsp;&nbsp;]</text>
+                using (Html.BeginForm("RemovePhoneNumber", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <text>[<input type="submit" value="Remove" class="btn-link" />]</text>
+                }
+            }
+            else
+            {
+                <text>[&nbsp;&nbsp;@Html.ActionLink("Add", "AddPhoneNumber")
+            }
+        </dd>
+    *@
+    <dt>Two-Factor Authentication:</dt>
+    <dd>
+        <p>
+            There are no two-factor authentication providers configured. See <a href="http://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
+            for details on setting up this ASP.NET application to support two-factor authentication.
+        </p>
+        @*@if (Model.TwoFactor)
+            {
+                using (Html.BeginForm("DisableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <text>Enabled
+                    <input type="submit" value="Disable" class="btn btn-link" />
+                    </text>
+                }
+            }
+            else
+            {
+                using (Html.BeginForm("EnableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <text>Disabled
+                    <input type="submit" value="Enable" class="btn btn-link" />
+                    </text>
+                }
+            }*@
+    </dd>
+</dl>

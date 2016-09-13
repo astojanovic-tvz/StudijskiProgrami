@@ -1,0 +1,26 @@
+﻿@model IEnumerable<HKOWebMVC4.ZanimanjeKompetencije_Result>
+
+<h5>@Html.MvcSiteMap().SiteMapPath() > Kompetencije</h5>
+
+<table id="kompetencije">
+    <thead>
+        <tr>
+            <th>
+                Kompetencija
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Kompetencija)
+                </td>
+            </tr>
+        }
+    </tbody>
+
+    </table>
+
+    @Html.ActionLink("Povratak", "Index", new { controller = "BuduciStudent" }, new { @class = "btn btn-primary" })

@@ -1,0 +1,24 @@
+﻿@model IEnumerable<HKOWebMVC4.StudijskiProgramKljucniPoslovi_Result>
+
+<h5>@Html.MvcSiteMap().SiteMapPath() > Ključni poslovi</h5>
+
+<table id="kljucniPoslovi">
+    <thead>
+        <tr>
+            <th>
+                Ključni posao
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KljucniPosao)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@Html.ActionLink("Povratak", "Index", new { controller = "ZavrseniStudent" }, new { @class = "btn btn-primary" })

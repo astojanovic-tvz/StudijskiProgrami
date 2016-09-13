@@ -1,0 +1,42 @@
+﻿@model IEnumerable<HKOWebMVC4.StudijskiProgrami_Result>
+<h5>@Html.MvcSiteMap().SiteMapPath()</h5>
+
+<table id="zanimanjaStudijiTable">
+    <thead>
+        <tr>
+            <th>
+                Studij
+            </th>
+            <th>
+                Studijski program
+            </th>
+            <th>Pregled:</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StudijskiProgramID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StudijskiProgram)
+                </td>
+                <td style="width:100px">
+                    <div class="dropdown btn-group btn-group-sm">
+                        <button type="button" class="btn btn-disabled">Opcije:</button>
+                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Kolegiji", "Kolegiji", new { controller = "StudijskiProgrami", studijskiProgramId = item.StudijskiProgramID })
+                            @*<li>@Html.ActionLink("Izborni kolegiji", "IzborniKolegiji", new { controller = "StudijskiProgrami", studijskiProgramId = item.StudijskiProgramID })*@
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>

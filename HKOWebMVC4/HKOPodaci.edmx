@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HKOModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="KolegijKompetencije" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="web">
+          <Parameter Name="KolegijISVUSifra" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="KolegijSkupIshodaUcenja" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="web">
+          <Parameter Name="KolegijID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="StudijskiProgrami" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="web" />
+        <Function Name="StudijskiProgramIzborniKolegiji" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="web">
+          <Parameter Name="StudijskiProgramID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="StudijskiProgramKljucniPoslovi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="web">
+          <Parameter Name="StudijskiProgramID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="StudijskiProgramKompetencije" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="web">
+          <Parameter Name="StudijskiProgramID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="StudijskiProgramObavezniKolegiji" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="web">
+          <Parameter Name="StudijskiProgramID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="StudijskiProgramRadnaMjesta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="web">
+          <Parameter Name="StudijskiProgramID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ZanimanjeKljucniPoslovi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="web">
+          <Parameter Name="ZanimanjeID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ZanimanjeKompetencije" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="web">
+          <Parameter Name="ZanimanjeID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ZanimanjeNaziv" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="web">
+          <Parameter Name="ZanimanjeID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ZanimanjePreporuceniIzborniKolegiji" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="web">
+          <Parameter Name="ZanimanjeID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ZanimanjeRadnaMjesta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="web">
+          <Parameter Name="ZanimanjeID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ZanimanjeStudiji" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="web" />
+        <EntityContainer Name="HKOModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HKOModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="HKOPodaci" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="KolegijSkupIshodaUcenja" ReturnType="Collection(HKOModel.KolegijSkupIshodaUcenja_Result)">
+          <Parameter Name="KolegijID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="StudijskiProgramIzborniKolegiji" ReturnType="Collection(HKOModel.StudijskiProgramIzborniKolegiji_Result)">
+          <Parameter Name="StudijskiProgramID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="StudijskiProgramObavezniKolegiji" ReturnType="Collection(HKOModel.StudijskiProgramObavezniKolegiji_Result)">
+          <Parameter Name="StudijskiProgramID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ZanimanjeKljucniPoslovi" ReturnType="Collection(HKOModel.ZanimanjeKljucniPoslovi_Result)">
+          <Parameter Name="ZanimanjeID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ZanimanjeKompetencije" ReturnType="Collection(HKOModel.ZanimanjeKompetencije_Result)">
+          <Parameter Name="ZanimanjeID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ZanimanjeNaziv" ReturnType="Collection(String)">
+          <Parameter Name="ZanimanjeID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ZanimanjePreporuceniIzborniKolegiji" ReturnType="Collection(HKOModel.ZanimanjePreporuceniIzborniKolegiji_Result)">
+          <Parameter Name="ZanimanjeID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ZanimanjeRadnaMjesta" ReturnType="Collection(HKOModel.ZanimanjeRadnaMjesta_Result)">
+          <Parameter Name="ZanimanjeID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ZanimanjeStudiji" ReturnType="Collection(HKOModel.ZanimanjeStudiji_Result)" />
+          <FunctionImport Name="StudijskiProgrami" ReturnType="Collection(HKOModel.StudijskiProgrami_Result)" />
+          <FunctionImport Name="StudijskiProgramKljucniPoslovi" ReturnType="Collection(HKOModel.StudijskiProgramKljucniPoslovi_Result)">
+          <Parameter Name="StudijskiProgramID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="StudijskiProgramKompetencije" ReturnType="Collection(HKOModel.StudijskiProgramKompetencije_Result)">
+          <Parameter Name="StudijskiProgramID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="StudijskiProgramRadnaMjesta" ReturnType="Collection(HKOModel.StudijskiProgramRadnaMjesta_Result)">
+          <Parameter Name="StudijskiProgramID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="KolegijKompetencije" ReturnType="Collection(HKOModel.KolegijKompetencije_Result)">
+          <Parameter Name="KolegijISVUSifra" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="KolegijSkupIshodaUcenja_Result">
+          <Property Type="Int32" Name="SkupIshodaUcenjaID" Nullable="false" />
+          <Property Type="String" Name="SkupIshodaUcenja" Nullable="true" MaxLength="300" />
+        </ComplexType>
+        <ComplexType Name="StudijskiProgramIzborniKolegiji_Result">
+          <Property Type="Int32" Name="KolegijID" Nullable="false" />
+          <Property Type="String" Name="Kolegij" Nullable="true" MaxLength="300" />
+        </ComplexType>
+        <ComplexType Name="StudijskiProgramObavezniKolegiji_Result">
+          <Property Type="Int32" Name="KolegijID" Nullable="false" />
+          <Property Type="String" Name="Kolegij" Nullable="true" MaxLength="300" />
+        </ComplexType>
+        <ComplexType Name="ZanimanjeKljucniPoslovi_Result">
+          <Property Type="Int32" Name="KljucniPosaoID" Nullable="false" />
+          <Property Type="String" Name="KljucniPosao" Nullable="true" MaxLength="300" />
+        </ComplexType>
+        <ComplexType Name="ZanimanjeKompetencije_Result">
+          <Property Type="Int32" Name="KompetencijaID" Nullable="false" />
+          <Property Type="String" Name="Kompetencija" Nullable="true" MaxLength="300" />
+        </ComplexType>
+        <ComplexType Name="ZanimanjePreporuceniIzborniKolegiji_Result">
+          <Property Type="Int32" Name="KolegijID" Nullable="false" />
+          <Property Type="String" Name="Kolegij" Nullable="true" MaxLength="300" />
+        </ComplexType>
+        <ComplexType Name="ZanimanjeRadnaMjesta_Result">
+          <Property Type="Int32" Name="RadnoMjestoID" Nullable="false" />
+          <Property Type="String" Name="RadnoMjesto" Nullable="true" MaxLength="300" />
+        </ComplexType>
+        <ComplexType Name="ZanimanjeStudiji_Result">
+          <Property Type="Int32" Name="ZanimanjeID" Nullable="false" />
+          <Property Type="Int32" Name="StudijID" Nullable="false" />
+          <Property Type="Int32" Name="StudijskiProgramID" Nullable="false" />
+          <Property Type="String" Name="Zanimanje" Nullable="true" MaxLength="300" />
+          <Property Type="String" Name="Studij" Nullable="true" MaxLength="300" />
+          <Property Type="String" Name="Studijski_program" Nullable="true" MaxLength="300" />
+        </ComplexType>
+        <ComplexType Name="StudijskiProgrami_Result">
+          <Property Type="Int32" Name="StudijskiProgramID" Nullable="false" />
+          <Property Type="String" Name="StudijskiProgram" Nullable="true" MaxLength="300" />
+        </ComplexType>
+        <ComplexType Name="StudijskiProgramKljucniPoslovi_Result">
+          <Property Type="Int32" Name="KljucniPosaoID" Nullable="false" />
+          <Property Type="String" Name="KljucniPosao" Nullable="true" MaxLength="300" />
+        </ComplexType>
+        <ComplexType Name="StudijskiProgramKompetencije_Result">
+          <Property Type="Int32" Name="KompetencijaID" Nullable="false" />
+          <Property Type="String" Name="Kompetencija" Nullable="true" MaxLength="300" />
+        </ComplexType>
+        <ComplexType Name="StudijskiProgramRadnaMjesta_Result">
+          <Property Type="Int32" Name="RadnoMjestoID" Nullable="false" />
+          <Property Type="String" Name="RadnoMjesto" Nullable="true" MaxLength="300" />
+        </ComplexType>
+        <ComplexType Name="KolegijKompetencije_Result">
+          <Property Type="Int32" Name="IDKompetencija" Nullable="false" />
+          <Property Type="String" Name="Kompetencija" Nullable="true" MaxLength="300" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HKOModelStoreContainer" CdmEntityContainer="HKOPodaci" >
+          <FunctionImportMapping FunctionImportName="KolegijSkupIshodaUcenja" FunctionName="HKOModel.Store.KolegijSkupIshodaUcenja">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HKOModel.KolegijSkupIshodaUcenja_Result">
+                <ScalarProperty Name="SkupIshodaUcenjaID" ColumnName="SkupIshodaUcenjaID" />
+                <ScalarProperty Name="SkupIshodaUcenja" ColumnName="SkupIshodaUcenja" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="StudijskiProgramIzborniKolegiji" FunctionName="HKOModel.Store.StudijskiProgramIzborniKolegiji">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HKOModel.StudijskiProgramIzborniKolegiji_Result">
+                <ScalarProperty Name="KolegijID" ColumnName="KolegijID" />
+                <ScalarProperty Name="Kolegij" ColumnName="Kolegij" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="StudijskiProgramObavezniKolegiji" FunctionName="HKOModel.Store.StudijskiProgramObavezniKolegiji">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HKOModel.StudijskiProgramObavezniKolegiji_Result">
+                <ScalarProperty Name="KolegijID" ColumnName="KolegijID" />
+                <ScalarProperty Name="Kolegij" ColumnName="Kolegij" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ZanimanjeKljucniPoslovi" FunctionName="HKOModel.Store.ZanimanjeKljucniPoslovi">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HKOModel.ZanimanjeKljucniPoslovi_Result">
+                <ScalarProperty Name="KljucniPosaoID" ColumnName="KljucniPosaoID" />
+                <ScalarProperty Name="KljucniPosao" ColumnName="KljucniPosao" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ZanimanjeKompetencije" FunctionName="HKOModel.Store.ZanimanjeKompetencije">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HKOModel.ZanimanjeKompetencije_Result">
+                <ScalarProperty Name="KompetencijaID" ColumnName="KompetencijaID" />
+                <ScalarProperty Name="Kompetencija" ColumnName="Kompetencija" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ZanimanjeNaziv" FunctionName="HKOModel.Store.ZanimanjeNaziv" />
+          <FunctionImportMapping FunctionImportName="ZanimanjePreporuceniIzborniKolegiji" FunctionName="HKOModel.Store.ZanimanjePreporuceniIzborniKolegiji">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HKOModel.ZanimanjePreporuceniIzborniKolegiji_Result">
+                <ScalarProperty Name="KolegijID" ColumnName="KolegijID" />
+                <ScalarProperty Name="Kolegij" ColumnName="Kolegij" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ZanimanjeRadnaMjesta" FunctionName="HKOModel.Store.ZanimanjeRadnaMjesta">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HKOModel.ZanimanjeRadnaMjesta_Result">
+                <ScalarProperty Name="RadnoMjestoID" ColumnName="RadnoMjestoID" />
+                <ScalarProperty Name="RadnoMjesto" ColumnName="RadnoMjesto" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ZanimanjeStudiji" FunctionName="HKOModel.Store.ZanimanjeStudiji">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HKOModel.ZanimanjeStudiji_Result">
+                <ScalarProperty Name="ZanimanjeID" ColumnName="ZanimanjeID" />
+                <ScalarProperty Name="StudijID" ColumnName="StudijID" />
+                <ScalarProperty Name="StudijskiProgramID" ColumnName="StudijskiProgramID" />
+                <ScalarProperty Name="Zanimanje" ColumnName="Zanimanje" />
+                <ScalarProperty Name="Studij" ColumnName="Studij" />
+                <ScalarProperty Name="Studijski_program" ColumnName="Studijski program" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="StudijskiProgrami" FunctionName="HKOModel.Store.StudijskiProgrami">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HKOModel.StudijskiProgrami_Result">
+                <ScalarProperty Name="StudijskiProgramID" ColumnName="StudijskiProgramID" />
+                <ScalarProperty Name="StudijskiProgram" ColumnName="StudijskiProgram" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="StudijskiProgramKljucniPoslovi" FunctionName="HKOModel.Store.StudijskiProgramKljucniPoslovi">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HKOModel.StudijskiProgramKljucniPoslovi_Result">
+                <ScalarProperty Name="KljucniPosaoID" ColumnName="KljucniPosaoID" />
+                <ScalarProperty Name="KljucniPosao" ColumnName="KljucniPosao" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="StudijskiProgramKompetencije" FunctionName="HKOModel.Store.StudijskiProgramKompetencije">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HKOModel.StudijskiProgramKompetencije_Result">
+                <ScalarProperty Name="KompetencijaID" ColumnName="KompetencijaID" />
+                <ScalarProperty Name="Kompetencija" ColumnName="Kompetencija" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="StudijskiProgramRadnaMjesta" FunctionName="HKOModel.Store.StudijskiProgramRadnaMjesta">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HKOModel.StudijskiProgramRadnaMjesta_Result">
+                <ScalarProperty Name="RadnoMjestoID" ColumnName="RadnoMjestoID" />
+                <ScalarProperty Name="RadnoMjesto" ColumnName="RadnoMjesto" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="KolegijKompetencije" FunctionName="HKOModel.Store.KolegijKompetencije">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HKOModel.KolegijKompetencije_Result">
+                <ScalarProperty Name="IDKompetencija" ColumnName="IDKompetencija" />
+                <ScalarProperty Name="Kompetencija" ColumnName="Kompetencija" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,26 @@
+﻿@model IEnumerable<HKOWebMVC4.ZanimanjeRadnaMjesta_Result>
+
+<h5>@Html.MvcSiteMap().SiteMapPath() > Radna mjesta</h5>
+
+<table id="radnaMjesta">
+    <thead>
+        <tr>
+            <th>
+                Radno mjesto
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RadnoMjesto)
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+@Html.ActionLink("Povratak", "Index", new { controller = "BuduciStudent" } , new { @class = "btn btn-primary" })

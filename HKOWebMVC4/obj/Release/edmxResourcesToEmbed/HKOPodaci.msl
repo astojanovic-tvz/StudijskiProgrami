@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HKOModelStoreContainer" CdmEntityContainer="HKOPodaci">
+    <FunctionImportMapping FunctionImportName="KolegijSkupIshodaUcenja" FunctionName="HKOModel.Store.KolegijSkupIshodaUcenja">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HKOModel.KolegijSkupIshodaUcenja_Result">
+          <ScalarProperty Name="SkupIshodaUcenjaID" ColumnName="SkupIshodaUcenjaID" />
+          <ScalarProperty Name="SkupIshodaUcenja" ColumnName="SkupIshodaUcenja" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="StudijskiProgramIzborniKolegiji" FunctionName="HKOModel.Store.StudijskiProgramIzborniKolegiji">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HKOModel.StudijskiProgramIzborniKolegiji_Result">
+          <ScalarProperty Name="KolegijID" ColumnName="KolegijID" />
+          <ScalarProperty Name="Kolegij" ColumnName="Kolegij" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="StudijskiProgramObavezniKolegiji" FunctionName="HKOModel.Store.StudijskiProgramObavezniKolegiji">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HKOModel.StudijskiProgramObavezniKolegiji_Result">
+          <ScalarProperty Name="KolegijID" ColumnName="KolegijID" />
+          <ScalarProperty Name="Kolegij" ColumnName="Kolegij" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ZanimanjeKljucniPoslovi" FunctionName="HKOModel.Store.ZanimanjeKljucniPoslovi">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HKOModel.ZanimanjeKljucniPoslovi_Result">
+          <ScalarProperty Name="KljucniPosaoID" ColumnName="KljucniPosaoID" />
+          <ScalarProperty Name="KljucniPosao" ColumnName="KljucniPosao" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ZanimanjeKompetencije" FunctionName="HKOModel.Store.ZanimanjeKompetencije">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HKOModel.ZanimanjeKompetencije_Result">
+          <ScalarProperty Name="KompetencijaID" ColumnName="KompetencijaID" />
+          <ScalarProperty Name="Kompetencija" ColumnName="Kompetencija" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ZanimanjeNaziv" FunctionName="HKOModel.Store.ZanimanjeNaziv" />
+    <FunctionImportMapping FunctionImportName="ZanimanjePreporuceniIzborniKolegiji" FunctionName="HKOModel.Store.ZanimanjePreporuceniIzborniKolegiji">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HKOModel.ZanimanjePreporuceniIzborniKolegiji_Result">
+          <ScalarProperty Name="KolegijID" ColumnName="KolegijID" />
+          <ScalarProperty Name="Kolegij" ColumnName="Kolegij" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ZanimanjeRadnaMjesta" FunctionName="HKOModel.Store.ZanimanjeRadnaMjesta">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HKOModel.ZanimanjeRadnaMjesta_Result">
+          <ScalarProperty Name="RadnoMjestoID" ColumnName="RadnoMjestoID" />
+          <ScalarProperty Name="RadnoMjesto" ColumnName="RadnoMjesto" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ZanimanjeStudiji" FunctionName="HKOModel.Store.ZanimanjeStudiji">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HKOModel.ZanimanjeStudiji_Result">
+          <ScalarProperty Name="ZanimanjeID" ColumnName="ZanimanjeID" />
+          <ScalarProperty Name="StudijID" ColumnName="StudijID" />
+          <ScalarProperty Name="StudijskiProgramID" ColumnName="StudijskiProgramID" />
+          <ScalarProperty Name="Zanimanje" ColumnName="Zanimanje" />
+          <ScalarProperty Name="Studij" ColumnName="Studij" />
+          <ScalarProperty Name="Studijski_program" ColumnName="Studijski program" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="StudijskiProgrami" FunctionName="HKOModel.Store.StudijskiProgrami">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HKOModel.StudijskiProgrami_Result">
+          <ScalarProperty Name="StudijskiProgramID" ColumnName="StudijskiProgramID" />
+          <ScalarProperty Name="StudijskiProgram" ColumnName="StudijskiProgram" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="StudijskiProgramKljucniPoslovi" FunctionName="HKOModel.Store.StudijskiProgramKljucniPoslovi">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HKOModel.StudijskiProgramKljucniPoslovi_Result">
+          <ScalarProperty Name="KljucniPosaoID" ColumnName="KljucniPosaoID" />
+          <ScalarProperty Name="KljucniPosao" ColumnName="KljucniPosao" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="StudijskiProgramKompetencije" FunctionName="HKOModel.Store.StudijskiProgramKompetencije">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HKOModel.StudijskiProgramKompetencije_Result">
+          <ScalarProperty Name="KompetencijaID" ColumnName="KompetencijaID" />
+          <ScalarProperty Name="Kompetencija" ColumnName="Kompetencija" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="StudijskiProgramRadnaMjesta" FunctionName="HKOModel.Store.StudijskiProgramRadnaMjesta">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HKOModel.StudijskiProgramRadnaMjesta_Result">
+          <ScalarProperty Name="RadnoMjestoID" ColumnName="RadnoMjestoID" />
+          <ScalarProperty Name="RadnoMjesto" ColumnName="RadnoMjesto" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="KolegijKompetencije" FunctionName="HKOModel.Store.KolegijKompetencije">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HKOModel.KolegijKompetencije_Result">
+          <ScalarProperty Name="IDKompetencija" ColumnName="IDKompetencija" />
+          <ScalarProperty Name="Kompetencija" ColumnName="Kompetencija" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,70 @@
+﻿@model HKOWebMVC4.Models.HKOWebModels.Korisnik.KorisnikOdabirZanimanja
+
+<h2>Odabir zanimanja</h2>
+
+@using (Ajax.BeginForm("Zanimanja", "Poslodavac", new AjaxOptions { UpdateTargetId = "_AjaxInfoMessage" }, new { id = "odabirZanimanjaForm" }))
+{
+    int itemCount = 0;
+    bool choiceChecked = false;
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div id="_AjaxInfoMessage"></div>
+    <div class="form-horizontal">
+        <div class="col-md-12 panel">
+            <div class="col-md-6">
+                <ul class="list-unstyled">
+                    @foreach (var entry in Model.svaZanimanja)
+                    {
+                        itemCount++;
+                        if (Model.odabranaZanimanja.Count <= 0)
+                        {
+                            <li>
+                                <input id=@Html.Raw(entry.Key) class="zanimanjeId" type="checkbox" value=@Html.Raw(entry.Key) />
+                                <label for=@Html.Raw(entry.Key) class="zanimanjeNaziv">@Html.Raw(entry.Value)</label>
+                            </li>
+                        }
+                        else
+                        {
+                            foreach (var odabranoZanimanje in Model.odabranaZanimanja)
+                            {
+                                if (odabranoZanimanje.zanimanjeId == entry.Key)
+                                {
+                                    choiceChecked = true;
+                                }
+                                else
+                                {
+                                    continue;
+                                }
+                            }
+                            if (choiceChecked)
+                            {
+                                <li class="chosenProffesion">
+                                    <input id=@Html.Raw(entry.Key) class="zanimanjeId" type="checkbox" value=@Html.Raw(entry.Key) checked="checked" />
+                                    <label for=@Html.Raw(entry.Key) class="zanimanjeNaziv">@Html.Raw(entry.Value)</label>
+                                </li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <input id=@Html.Raw(entry.Key) class="zanimanjeId" type="checkbox" value=@Html.Raw(entry.Key) />
+                                    <label for=@Html.Raw(entry.Key) class="zanimanjeNaziv">@Html.Raw(entry.Value)</label>
+                                </li>
+                            }
+                            choiceChecked = false;
+                        }
+
+                        if (Model.svaZanimanja.Count() > 7 && itemCount == (int)(Model.svaZanimanja.Count() / 2))
+                        {
+                            @Html.Raw("</ul></div><div class=\"col-md-6\"><ul class=\"list-unstyled\">");
+                        }
+                    }
+                </ul>
+            </div>
+            <div class="form-group">
+                <div class="col-md-5">
+                    <input type="button" value="Spremite odabir" class="btn btn-warning resetAjaxMessage saveProffesionsChoice" />
+                </div>
+            </div>
+        </div>
+    </div>
+}

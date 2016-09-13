@@ -1,0 +1,69 @@
+﻿@model IEnumerable<HKOWebMVC4.Models.UserProfileInfo>
+
+<h5>@Html.MvcSiteMap().SiteMapPath()</h5>
+
+<table class="table" id="kandidatiTable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Ime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prezime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JMBAG)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Država)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Grad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adresa)
+            </th>
+            <th>Detalji:</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Prezime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JMBAG)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Država)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Grad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adresa)
+                </td>
+                <td style="width:100px">
+                    <div class="dropdown btn-group btn-group-sm">
+                        <button type="button" class="btn btn-disabled">Pregled:</button>
+                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Detalji", "Index", new { controller = "Manage" , studentId = item.Id})</li>
+                            <li>@Html.ActionLink("Kompetencije", "Kompetencije", new { controller = "Studenti", JMBAG = item.JMBAG })
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@Html.ActionLink("Povratak", "Index", new { controller = "Poslodavac" }, new { @class = "btn btn-primary" })
+
