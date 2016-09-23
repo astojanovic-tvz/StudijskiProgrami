@@ -19,7 +19,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/13/2016 13:40:44</publishTime>
     </File>
     <File Include="bin/HKOWebMVC4.dll">
-      <publishTime>09/08/2016 11:07:32</publishTime>
+      <publishTime>09/13/2016 18:23:15</publishTime>
     </File>
     <File Include="bin/ISVU_API.dll">
       <publishTime>06/20/2016 17:43:42</publishTime>
@@ -589,7 +589,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/15/2016 17:19:48</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>06/15/2016 17:19:48</publishTime>
+      <publishTime>09/08/2016 14:19:34</publishTime>
     </File>
     <File Include="Readme.txt">
       <publishTime>06/20/2016 17:44:02</publishTime>
@@ -928,7 +928,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/15/2016 17:19:48</publishTime>
     </File>
     <File Include="Views/HKOWebViews/BuduciStudent/Kolegiji.cshtml">
-      <publishTime>09/06/2016 13:36:14</publishTime>
+      <publishTime>09/13/2016 17:59:39</publishTime>
     </File>
     <File Include="Views/HKOWebViews/BuduciStudent/Kompetencije.cshtml">
       <publishTime>06/15/2016 17:19:48</publishTime>
@@ -949,10 +949,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/15/2016 17:19:48</publishTime>
     </File>
     <File Include="Views/HKOWebViews/StudijskiProgrami/Index.cshtml">
-      <publishTime>09/01/2016 13:50:28</publishTime>
+      <publishTime>01/09/2016 13:50:28</publishTime>
     </File>
     <File Include="Views/HKOWebViews/StudijskiProgrami/StudijskiProgramiObavezniKolegiji.cshtml">
-      <publishTime>09/06/2016 15:21:17</publishTime>
+      <publishTime>09/13/2016 17:54:33</publishTime>
     </File>
     <File Include="Views/HKOWebViews/ZavrseniStudent/Index.cshtml">
       <publishTime>06/15/2016 17:19:48</publishTime>
@@ -973,7 +973,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/13/2016 13:38:56</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>09/02/2016 12:05:09</publishTime>
+      <publishTime>09/13/2016 18:20:06</publishTime>
     </File>
     <File Include="Views/Manage/AddPhoneNumber.cshtml">
       <publishTime>04/13/2016 13:38:56</publishTime>
@@ -1024,7 +1024,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/13/2016 13:38:56</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>09/06/2016 13:30:22</publishTime>
+      <publishTime>09/13/2016 17:53:38</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>04/13/2016 13:38:56</publishTime>
@@ -1036,7 +1036,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/13/2016 13:38:56</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/08/2016 11:07:33</publishTime>
+      <publishTime>09/13/2016 18:19:43</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -223,6 +223,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HKOWebControllers\BuduciStudent\BuduciStudentController.cs" />
+    <Compile Include="Controllers\HKOWebControllers\Kompetencije\KompetencijeController.cs" />
     <Compile Include="Controllers\HKOWebControllers\Poslodavac\PoslodavacController.cs" />
     <Compile Include="Controllers\HKOWebControllers\Studenti\StudentiController.cs" />
     <Compile Include="Controllers\HKOWebControllers\StudijskiProgrami\StudijskiProgramiController.cs" />
@@ -271,6 +272,7 @@
     </Compile>
     <Compile Include="Migrations\HKO_WEB\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\HKOWebModels\AjaxModels\PoslodavacModels\_AjaxOdabranaZanimanja.cs" />
     <Compile Include="Models\HKOWebModels\AjaxModels\_AjaxResponseModel.cs" />
     <Compile Include="Models\HKOWebModels\ExceptionModels\HKOWebRuntimeException.cs" />
     <Compile Include="Models\HKOWebModels\KolegijiPregled.cs" />
@@ -304,6 +306,7 @@
       <DependentUpon>HKOPodaci.tt</DependentUpon>
     </Compile>
     <Compile Include="Util\Util.cs" />
+    <Compile Include="Util\UtilitiesClass.cs" />
     <Compile Include="Views\HKOWebViews\Studenti\StudentiKompetencije.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -582,6 +585,7 @@
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Scripts\ShowCompetencyForSelectedOccupation.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -651,6 +655,8 @@
     <Content Include="Views\Shared\DisplayTemplates\CanonicalHelperModel.cshtml" />
     <Content Include="Views\HKOWebViews\StudijskiProgrami\Index.cshtml" />
     <Content Include="Views\HKOWebViews\StudijskiProgrami\StudijskiProgramiObavezniKolegiji.cshtml" />
+    <Content Include="Views\HKOWebViews\Kompetencije\Kompetencije.cshtml" />
+    <Content Include="Views\HKOWebViews\Kompetencije\_KompetencijeTabbedList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

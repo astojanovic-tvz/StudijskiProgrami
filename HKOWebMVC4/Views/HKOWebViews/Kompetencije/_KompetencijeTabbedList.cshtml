@@ -1,0 +1,82 @@
+﻿@using System.Data.Entity.Core.Objects;
+@using HKOWebMVC4.Models.HKOWebModels.AjaxModels.PoslodavacModels;
+@model IDictionary<_AjaxOdabranaZanimanja, List<ZanimanjeKompetencije_Result>>
+
+<ul class="nav nav-tabs kompetencije-tabbed-tabs">
+    @{
+        var i = 0;
+        foreach (var occupation in Model.Keys)
+        {
+            if (i == 0)
+            {
+                <li class="active"><a data-toggle="tab" href="#tab_@occupation.IdZanimanja">@occupation.NameZanimanja</a></li>
+            }
+            else
+            {
+                <li><a data-toggle="tab" href="#tab_@occupation.IdZanimanja">@occupation.NameZanimanja</a></li>
+            }
+            i++;
+        }
+    }
+</ul>
+
+<div class="tab-content">
+    @{
+        i = 0;
+        foreach (var occupation in Model.Keys)
+        {
+            if (i == 0)
+            {
+                <div id="tab_@occupation.IdZanimanja" class="tab-pane fade in active">
+                    <h3>@occupation.NameZanimanja</h3>
+                    <table class="kompetencije-table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Kompetencija
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var kompetencijaItem in Model[occupation])
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(kompetencija => kompetencijaItem.Kompetencija)
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+            else
+            {
+                <div id="tab_@occupation.IdZanimanja" class="tab-pane fade">
+                    <h3>@occupation.NameZanimanja</h3>
+                    <table class="kompetencije-table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Kompetencija
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var kompetencijaItem in Model[occupation])
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(kompetencija => kompetencijaItem.Kompetencija)
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+            i++;
+        }
+    }
+</div>
+

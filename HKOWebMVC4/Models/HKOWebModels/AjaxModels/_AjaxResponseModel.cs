@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace HKOWebMVC4.Models.HKOWebModels.AjaxModels
+﻿namespace HKOWebMVC4.Models.HKOWebModels.AjaxModels
 {
     public class _AjaxResponseModel
     {
